@@ -5,7 +5,12 @@ public class ExConnection {
     private static ExConnection connection;
 
     // make constructor will be Private
-    private ExConnection(){}
+    private ExConnection(){
+        // Solution 1.
+        if (connection != null){
+            throw new RuntimeException("You are try to break Singleton patter");
+        }
+    }
 
     // A public method created.
     public static ExConnection getConnection(){
